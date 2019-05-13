@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Rajdhani');
 
+$header-text: #faed26;
+$header-background: #5a5560;
+$main-background: #272727;
+
 html,
 body {
 	margin: 0;
@@ -7,32 +11,36 @@ body {
 }
 
 h1 {
-	font-family: Rajdhani;		
-	color: #03DAC5;
-	margin: 0;
-	font-style: italic;
-	text-align: center;
+    font-family: Rajdhani;
+    color: $header-text;
+    margin: 0;
+    display: flex;
+    font-style: italic;
+    height: 100%;
+    align-items: center;
 }
 
 .container {
 	display: flex;
+	flex-direction: column;
 	height: 100%;
 }
 
-.sidebar {
-	padding: 20px;
-	flex: 1 1 10%;
-	height: 100%;
-	background-color: #6200EE;
+.header-bar {
+	padding: 12px;
+	align-items: center; 
+	background-color: $header-background;
 }
 
 .main {
-	flex: 1 1 80%;
-	background-image: url('https://i.imgur.com/0C1dX26.jpg?1');
+	background-color: $main-background;
+	height: 100%;
+	display: flex;
+	justify-content: center;
 }
 
-.main-image {
-	position: fixed;
-	height: 100%;
-	width: 100%;
+img {
+	height: 60px;
+	border-radius: 60px;
+	margin-right: 12px;
 }
