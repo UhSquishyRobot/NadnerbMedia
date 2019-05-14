@@ -108,7 +108,6 @@ GEM
       pry (>= 0.10.4)
     public_suffix (3.0.3)
     puma (3.12.1)
-    quilljs-rails (0.0.4)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -203,7 +202,6 @@ DEPENDENCIES
   pg
   pry-rails
   puma (~> 3.11)
-  quilljs-rails
   rails (~> 5.2.2)
   sass-rails (~> 5.0)
   selenium-webdriver
