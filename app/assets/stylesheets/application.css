@@ -14,5 +14,5 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css?family=Rajdhani');
-@import './main';
-@import '.articles';
+@import './main.scss';
+@import '.articles.scss';
