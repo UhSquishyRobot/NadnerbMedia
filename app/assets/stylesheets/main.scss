@@ -1,23 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Rajdhani');
-
-$header-text: #faed26;
-$header-background: #5a5560;
-$main-background: #272727;
+@import './colors';
 
 html,
 body {
 	margin: 0;
 	height: 100%;
+	background-color: $main-background;
+	padding-bottom: 30px
 }
 
-h1 {
-    font-family: Rajdhani;
-    color: $header-text;
-    margin: 0;
-    display: flex;
-    font-style: italic;
-    height: 100%;
-    align-items: center;
+.header {
+	&-bar {
+		padding: 12px;
+		align-items: center; 
+		background-color: $header-background;
+	}
+
+	&-text {
+		font-family: Rajdhani;
+		color: $header-text;
+		margin: 0;
+		display: flex;
+		font-style: italic;
+		height: 100%;
+		align-items: center;
+	}
 }
 
 .container {
@@ -26,14 +33,7 @@ h1 {
 	height: 100%;
 }
 
-.header-bar {
-	padding: 12px;
-	align-items: center; 
-	background-color: $header-background;
-}
-
 .main {
-	background-color: $main-background;
 	height: 100%;
 	display: flex;
 	justify-content: center;

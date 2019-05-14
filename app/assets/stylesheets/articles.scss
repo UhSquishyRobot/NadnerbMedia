@@ -1,3 +1,35 @@
+@import './colors';
+
 .top-editor-container {
-	width: 60%;	
+	margin-top: 40px;
+	width: 60%;
+
+	.ql-editor {
+		height: 300px;	
+	}
+
+	input[type="submit"] {
+	    background-color: $button;
+	    color: $header-text;
+	    border: none;
+	    font-family: Rajdhani;
+	    font-style: italic;
+	    border-radius: 5px;
+	    margin-top: 6px;
+	    float: right;
+	}
+}
+
+.title-form-container {
+	width: 100%;
+	margin-bottom: 12px;
+
+	input {
+	    font-family: Helvetica, Arial, sans-serif;
+    	font-size: 13px;
+		padding: 10px 10px 10px 15px;
+		border: 1px solid #ccc;
+		width: calc(100% - 27px);
+		background-color: $main-background;
+	}
 }

@@ -1,20 +1,36 @@
-<link href="https://cdn.quilljs.com/1.1.6/quill.snow.css" rel="stylesheet">
-
 <div class="top-editor-container">
-	<!-- Create the editor container -->
-	<div id="editor">
-	  <p>Hello World!</p>
-	  <p>Some initial <strong>bold</strong> text</p>
-	  <p><br></p>
-	</div>
+	<%= form_with model: @article, html: { id: "article-form" } do |f| %>
+		<div class="title-form-container">
+			<%= f.text_field :title, value: "Title", id: "title-form" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.hidden_field :description, required: true %>
+				<div id="article-editor"></div>
+			<%= f.submit %> 
+		</div>
+	<% end %>
 </div>
 
-<!-- Include the Quill library -->
-<script src="https://cdn.quilljs.com/1.1.6/quill.js"></script>
-
-<!-- Initialize Quill editor -->
 <script>
-  var quill = new Quill('#editor', {
-    theme: 'snow'
-  });
+	var form = document.querySelector("#article-form");
+    
+	var quill = new Quill("#article-editor", {
+	  	modules: {
+	    	toolbar: [
+		      [{ header: [1, 2, false] }],
+		      ['bold', 'italic', 'underline'],
+		      ['image', 'code-block'],
+		      [{ 'align': [] }]
+		    ],
+		},
+	    placeholder: 'Start a Post',
+	    theme: 'snow'
+	});
+
+	form.onsubmit = function() {
+		var postContentInput = document.querySelector("#article_description");
+		console.log(postContentInput);
+		postContentInput.value = quill.root.innerHTML;
+	};
 </script>
