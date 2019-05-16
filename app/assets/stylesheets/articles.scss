@@ -1,4 +1,5 @@
 @import './colors';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .top-editor-container {
 	margin-top: 40px;
@@ -31,5 +32,40 @@
 		border: 1px solid #ccc;
 		width: calc(100% - 27px);
 		background-color: $main-background;
+	}
+}
+
+.article {
+	&-list {
+		width: 50%;
+	}
+
+	&-container {
+		background-color: $article-background;
+		padding: 66px;
+		margin: 80px 0 80px 0;
+	}
+
+	&-header {
+		margin-bottom: 60px;
+	}
+
+	&-date {
+		font-family: Rajdhani;
+		display: flex;
+		justify-content: center;
+		font-size: 32px;
+	}
+
+	&-title {
+		text-align: center;
+		font-family: Rajdhani;
+		font-size: 48px;
+		margin: 10px;
+	} 	
+
+	&-body {
+		font-size: 18px;
+		font-family: Roboto;
 	}
 }

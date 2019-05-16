@@ -1,2 +1,17 @@
-<!DOCTYPE html>
-<html>
+<section class="article-list">
+	<% @articles.each do |article| %>
+		<div class="article-container">
+			<div class="article-header">
+				<div class="article-date">
+					<%= article.created_at.strftime("%B %d, %Y") %>		
+				</div>
+				<h1 class="article-title">
+					<%=raw article.title %>	
+				</h1>
+			</div>
+			<div class="article-body">
+				<%=raw article.description %>	
+			</div>
+		</div>
+	<% end %>
+</section>

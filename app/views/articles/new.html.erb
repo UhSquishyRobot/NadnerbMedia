@@ -15,22 +15,33 @@
 <script>
 	var form = document.querySelector("#article-form");
     
+	function imageHandler() {
+		var range = this.quill.getSelection();
+		var value = prompt('What is the image URL');
+		this.quill.insertEmbed(range.index, 'image', value, Quill.sources.USER);
+	}
+
 	var quill = new Quill("#article-editor", {
 	  	modules: {
 	    	toolbar: [
-		      [{ header: [1, 2, false] }],
-		      ['bold', 'italic', 'underline'],
-		      ['image', 'code-block'],
-		      [{ 'align': [] }]
+		        [{ header: [1, 2, false] }],
+		        
+		        ['bold', 'italic', 'underline'],
+		        ['image', 'code-block'],
+		        
+		        [{ align: [] }],
+        	    
 		    ],
 		},
 	    placeholder: 'Start a Post',
-	    theme: 'snow'
+	    theme: 'snow',
+	    handlers: {
+            'image': imageHandler
+        }
 	});
 
 	form.onsubmit = function() {
 		var postContentInput = document.querySelector("#article_description");
-		console.log(postContentInput);
 		postContentInput.value = quill.root.innerHTML;
 	};
 </script>
