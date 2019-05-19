@@ -1,6 +1,10 @@
 <section class="article-list">
-	<% @articles.each do |article| %>
+	<% @articles.each do |article| %>		
 		<div class="article-container">
+			<div class="article-actions">
+				<span><%= link_to 'edit', edit_article_path(article) %></span>
+				<span><%= link_to 'delete', article_path(article), method: :delete %></span>
+			</div>
 			<div class="article-header">
 				<div class="article-date">
 					<%= article.created_at.strftime("%B %d, %Y") %>		

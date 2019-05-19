@@ -1,0 +1,15 @@
+@import './colors';
+
+.ql {
+	&-container, &-toolbar {
+		border: 0 !important;
+	}
+
+	&-editor {
+		background-color: $article-background;
+		font-size: 18px;
+		font-family: Roboto;
+		font-style: normal;
+		padding: 12px 66px 0 !important;
+	}
+}

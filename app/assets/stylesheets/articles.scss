@@ -3,7 +3,7 @@
 
 .top-editor-container {
 	margin-top: 80px;
-	width: 60%;
+	width: 50%;
 
 	.ql-editor {
 		height: 300px;	
@@ -33,6 +33,7 @@
 		border: none;
 		width: calc(100% - 27px);
 		background-color: $article-background;
+		text-align: center;
 	}
 }
 
@@ -43,8 +44,21 @@
 
 	&-container {
 		background-color: $article-background;
-		padding: 66px;
+		padding: 0 66px 66px 66px;
 		margin: 80px 0 80px 0;
+	}
+
+	&-actions {
+		height: 66px;
+		font-family: Roboto;
+		font-size: 18px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-right: -36px;
+		span {
+			margin-left: 12px;
+		}
 	}
 
 	&-header {
@@ -70,3 +84,4 @@
 		font-family: Roboto;
 	}
 }
+
