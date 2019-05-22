@@ -16,6 +16,12 @@ class ArticlesController < ApplicationController
 		redirect_to root_path
 	end
 
+	def update
+		article = Article.find(edit_params[:id]) 
+		article.update(title: edit_params[:title], description: edit_params[:description])
+		redirect_to root_path
+	end
+
 	def destroy
 		Article.destroy(params[:id])
 		redirect_to root_path
@@ -23,5 +29,9 @@ class ArticlesController < ApplicationController
 
 	def article_params
 		params.require(:article).permit(:description, :title)
+	end
+
+	def edit_params
+		params.require(:article).permit(:description, :title, :id)
 	end
 end
