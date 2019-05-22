@@ -1,7 +1,7 @@
 <div class="top-editor-container">
 	<%= form_with model: @article, html: { id: "article-form" } do |f| %>
 		<div class="title-form-container">
-			<%= f.text_field :title, value: @article.title, id: "title-form" %>
+			<%= f.text_field :title, value: @article.title || "Title", id: "title-form" %>
 		</div>
 		
 		<%= f.hidden_field :id, value: @article.id %>
@@ -15,41 +15,41 @@
 </div>
 
 <script>
-	function imageHandler() {
-		var range = this.quill.getSelection();
-		var value = prompt('What is the image URL');
-		this.quill.insertEmbed(range.index, 'image', value, Quill.sources.USER);
-	}
+//	if (!quill) {
+		function imageHandler() {
+			var range = this.quill.getSelection();
+			var value = prompt('What is the image URL');
+			this.quill.insertEmbed(range.index, 'image', value, Quill.sources.USER);
+		}
 
-	function quillSubmit() {
-		var postContentInput = document.querySelector("#article_description");
-		postContentInput.value = quill.root.innerHTML;
-	};
+		function quillSubmit() {
+			var postContentInput = document.querySelector("#article_description");
+			postContentInput.value = quill.root.innerHTML;
+		};
 
-	var form = document.querySelector("#article-form");
+		var form = document.querySelector("#article-form");
 
-	var formValue = document.getElementsByClassName("form-group")[0].firstElementChild.value;
+		var formValue = document.getElementsByClassName("form-group")[0].firstElementChild.value;
 
-	var quill = new Quill("#article-editor", {
-	  	modules: {
-	    	toolbar: [
-		        [{ header: [1, 2, false] }],
-		        
-		        ['bold', 'italic', 'underline'],
-		        ['image', 'code-block'],			
-		        
-		        [{ align: [] }],
-        	    
-		    ],
-		},
-	    theme: 'snow'
-	});
+		var quill = new Quill("#article-editor", {
+		  	modules: {
+		    	toolbar: [
+			        [{ header: [1, 2, false] }],
+			        
+			        ['bold', 'italic', 'underline'],
+			        ['image', 'code-block'],			
+			        
+			        [{ align: [] }],
+		       	    
+			    ],
+			},
+		    theme: 'snow'
+		});
 
-	quill.getModule('toolbar').addHandler('image', imageHandler);
+		quill.getModule('toolbar').addHandler('image', imageHandler);
 
-	form.onsubmit = quillSubmit;
+		form.onsubmit = quillSubmit;
 
-	quill.root.innerHTML = formValue;
-
-
+		quill.root.innerHTML = formValue;
+	//}
 </script>
