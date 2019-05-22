@@ -46,6 +46,11 @@
 		background-color: $article-background;
 		padding: 0 66px 66px 66px;
 		margin: 80px 0 80px 0;
+
+		img {
+			// ZOINKS
+			max-width: 100%;
+		}
 	}
 
 	&-actions {
