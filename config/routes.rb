@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'articles#index'
-  # get '/articles/new', to: 'articles#new'
-  # post '/articles', to: 'articles#create'
   resources :articles
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 end

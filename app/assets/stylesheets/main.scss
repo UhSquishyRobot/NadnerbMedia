@@ -9,13 +9,30 @@ body {
 	padding-bottom: 30px
 }
 
+$side-bar-width: 244px;
+
 .header {
 	&-bar {
 		align-items: center; 
 		background-color: $header-background;
-		width: 13%;
+		width: $side-bar-width;
 		position: fixed;
 		height: 100%;
+
+		@media only screen and (max-width: 940px) {
+			display: none;
+		}
+
+		&-mobile {
+			background-color: #5a5560;
+    		display: flex;
+    		padding: 12px;
+    		align-items: center;
+
+			@media only screen and (min-width: 940px) {
+				display: none;			
+			}
+		}
 	}
 
 	&-text {
@@ -56,18 +73,40 @@ body {
 	display: flex;
 	flex-direction: row;
 	height: 100%;
+
+	@media only screen and (max-width: 940px) {
+		flex-direction: column;			
+	}
 }
 
 .main {
 	height: 100%;
-	width: 100%;
+	width: calc(100% - #{$side-bar-width});
 	display: flex;
 	justify-content: center;
+	margin-left: calc(#{$side-bar-width} / 2);
+
+	@media only screen and (max-width: 1600px) {
+		margin-left: $side-bar-width;
+	}
+
+	@media only screen and (max-width: 940px) {
+		margin-left: 0;
+		width: 100%;
+	}
 }
+	
 
 .portrait {
 	height: 180px;
 	border-radius: 100px;
 	margin: 72px 30px 36px;
 	box-shadow: 0 0 0 1pt $header-text;
+
+	&-mobile {
+		height: 80px;
+		border-radius: 80px;
+		box-shadow: 0 0 0 1pt $header-text;
+		margin-right: 18px;
+	}
 }
