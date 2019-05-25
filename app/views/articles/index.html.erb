@@ -2,8 +2,10 @@
 	<% @articles.each do |article| %>		
 		<div class="article-container">
 			<div class="article-actions">
-				<span><%= link_to 'edit', edit_article_path(article) %></span>
-				<span><%= link_to 'delete', article_path(article), method: :delete %></span>
+				<% if logged_in? %>
+					<span><%= link_to 'edit', edit_article_path(article) %></span>
+					<span><%= link_to 'delete', article_path(article), method: :delete %></span>
+				<% end %>
 			</div>
 			<div class="article-header">
 				<div class="article-date">

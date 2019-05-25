@@ -2,11 +2,14 @@
 	<%= form_for(:session, url: login_path) do |f| %>
 		<div class="form-group">
 			<%= f.label :username %>
-			<%= f.text_field :username, placeholder: 'password', autofocus: true %>
+			<%= f.text_field :username, placeholder: 'username', autofocus: true %>
 		</div>
 		<div class="form-group">
 			<%= f.label :password %>
 			<%= f.text_field :password, placeholder: 'password' %>
+		</div>
+		<div class="form-submit">
+			<%= f.submit "login" %>	
 		</div>
 	<% end %>
 </div>

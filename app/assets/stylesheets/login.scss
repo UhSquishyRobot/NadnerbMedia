@@ -1,0 +1,27 @@
+@import './colors';
+
+.login-form {
+	width: 400px;
+	justify-content: center;
+	align-items: center;
+	height: 400px;
+	display: flex;
+	background-color: $article-background;
+	margin-top: 80px;
+
+	form {
+		height: 50%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-family: Roboto;
+	}
+}
