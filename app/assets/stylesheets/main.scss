@@ -37,15 +37,23 @@ $side-bar-width: 244px;
 	}
 
 	&-text {
-		font-family: Rajdhani;
-		font-size: 48px;
-		color: $header-text;
 		margin: 0;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		text-align: center;
 	
+		a {
+			font-family: Rajdhani;
+			font-size: 48px;
+			text-decoration: none;
+			color: $header-text;
+			
+			&:hover {
+				color: $hover;
+			}
+		}
+
 		@media (max-width: 940px) {
 			font-size: 32px;
 		}

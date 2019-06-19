@@ -40,7 +40,7 @@ $article-width: 900px;
 }
 
 .article {
-	&-list {
+	&-list, &-single-container {
 		width: $article-width;
 
 		@media only screen and (max-width: 1200px) {

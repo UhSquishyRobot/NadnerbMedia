@@ -12,8 +12,16 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
+		if !logged_in?
+			redirect_to root_path
+		end
+
 		Article.create(article_params)
 		redirect_to root_path
+	end
+
+	def show
+		@article = Article.find(params[:id])
 	end
 
 	def update

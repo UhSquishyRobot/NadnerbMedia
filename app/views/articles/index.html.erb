@@ -1,23 +1,5 @@
 <section class="article-list">
 	<% @articles.each do |article| %>		
-		<div class="article-container">
-			<div class="article-actions">
-				<% if logged_in? %>
-					<span><%= link_to 'edit', edit_article_path(article) %></span>
-					<span><%= link_to 'delete', article_path(article), method: :delete %></span>
-				<% end %>
-			</div>
-			<div class="article-header">
-				<div class="article-date">
-					<%= article.created_at.strftime("%B %d, %Y") %>		
-				</div>
-				<h1 class="article-title">
-					<%=raw article.title %>	
-				</h1>
-			</div>
-			<div class="article-body">
-				<%=raw article.description %>	
-			</div>
-		</div>
+		<%= render partial: "article", locals: { article: article } %>
 	<% end %>
 </section>
